@@ -5,7 +5,11 @@ import datetime
 
 from cyy_naive_lib.log import set_file_handler, get_logger
 
-from lib.arg_parse import get_arg_parser, get_parsed_args, create_trainer_from_args
+from cyy_naive_pytorch_lib.arg_parse import (
+    get_arg_parser,
+    get_parsed_args,
+    create_trainer_from_args,
+)
 
 if __name__ == "__main__":
     parser = get_arg_parser()
