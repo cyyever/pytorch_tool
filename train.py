@@ -1,20 +1,18 @@
 #!/usr/bin/env python3
+import datetime
 import os
 import sys
-import datetime
 
-from cyy_naive_lib.log import set_file_handler, get_logger
-
-from cyy_naive_pytorch_lib.arg_parse import (
-    get_arg_parser,
-    get_parsed_args,
-    create_trainer_from_args,
-)
+from cyy_naive_lib.log import get_logger, set_file_handler
+from cyy_naive_pytorch_lib.arg_parse import (affect_global_process_from_args,
+                                             create_trainer_from_args,
+                                             get_arg_parser, get_parsed_args)
 
 if __name__ == "__main__":
     parser = get_arg_parser()
     parser.add_argument("--repeated_num", type=int, default=None)
     args = get_parsed_args(parser=parser)
+    affect_global_process_from_args(args)
 
     if args.repeated_num is None:
         set_file_handler(
@@ -48,6 +46,4 @@ if __name__ == "__main__":
     )
     get_logger().info("training_loss is %s", results["training_loss"])
     get_logger().info("validation_loss is %s", results["validation_loss"])
-    get_logger().info(
-        "validation_accuracy is %s",
-        results["validation_accuracy"])
+    get_logger().info("validation_accuracy is %s", results["validation_accuracy"])
