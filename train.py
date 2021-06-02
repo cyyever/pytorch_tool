@@ -3,7 +3,7 @@ import datetime
 import os
 
 from cyy_naive_lib.log import set_file_handler
-from cyy_naive_pytorch_lib.default_config import DefaultConfig
+from cyy_torch_toolbox.default_config import DefaultConfig
 
 if __name__ == "__main__":
     config = DefaultConfig()
