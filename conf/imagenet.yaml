@@ -1,0 +1,11 @@
+---
+dataset_name: ImageNet
+model_name: Resnet50
+epoch: 50
+cache_transforms: false
+use_amp: true
+log_level: INFO
+batch_size: 128
+learning_rate: 0.01
+learning_rate_scheduler: CosineAnnealingLR
+...

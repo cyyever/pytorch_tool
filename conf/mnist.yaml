@@ -1,0 +1,7 @@
+---
+dataset_name: MNIST
+model_name: LeNet5
+epoch: 10
+use_amp: true
+log_level: INFO
+...

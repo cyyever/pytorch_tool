@@ -1,15 +1,22 @@
-#!/usr/bin/env python3
 import datetime
 import os
 
-import torch.nn as nn
+import hydra
 from cyy_naive_lib.log import set_file_handler
 from cyy_torch_toolbox.default_config import DefaultConfig
-from cyy_torch_toolbox.ml_type import ModelExecutorHookPoint
+
+config = DefaultConfig()
+
+
+@hydra.main(config_path="conf", version_base=None)
+def load_config(conf) -> None:
+    if len(conf) == 1:
+        conf = next(iter(conf.values()))
+    DefaultConfig.load_config(config, conf)
+
 
 if __name__ == "__main__":
-    config = DefaultConfig()
-    config.load_args()
+    load_config()
     trainer = config.create_trainer()
 
     set_file_handler(
@@ -17,11 +24,9 @@ if __name__ == "__main__":
             "log",
             "train",
             config.dc_config.dataset_name,
-            config.model_name,
+            config.model_config.model_name,
             "{date:%Y-%m-%d_%H:%M:%S}.log".format(date=datetime.datetime.now()),
         )
     )
-
-    trainer.model_util.freeze_sub_modules(nn.Embedding)
 
     trainer.train()
