@@ -1,6 +1,7 @@
 ---
 dataset_name: ImageNet
 model_name: Resnet50
+optimizer_name: SGD
 epoch: 50
 cache_transforms: false
 use_amp: true
