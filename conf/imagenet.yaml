@@ -1,7 +1,9 @@
 ---
 dataset_name: ImageNet
-model_name: Resnet50
+model_name: efficientnet_b3
 epoch: 50
+pretrained: true
+optimizer_name: SGD
 cache_transforms: false
 use_amp: true
 log_level: INFO

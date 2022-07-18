@@ -7,12 +7,15 @@ from cyy_torch_toolbox.default_config import DefaultConfig
 
 config = DefaultConfig()
 
+remain_config = {}
+
 
 @hydra.main(config_path="conf", version_base=None)
 def load_config(conf) -> None:
+    global remain_config
     if len(conf) == 1:
         conf = next(iter(conf.values()))
-    DefaultConfig.load_config(config, conf)
+    remain_config = DefaultConfig.load_config(config, conf, check_config=False)
 
 
 if __name__ == "__main__":
@@ -29,4 +32,7 @@ if __name__ == "__main__":
         )
     )
 
+    if "use_amp" in remain_config:
+        print("use AMP")
+        trainer.set_amp()
     trainer.train()
