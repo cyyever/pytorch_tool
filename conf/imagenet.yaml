@@ -1,6 +1,7 @@
 ---
 dataset_name: ImageNet
 model_name: efficientnet_b3
+optimizer_name: SGD
 epoch: 50
 pretrained: true
 optimizer_name: SGD
