@@ -15,7 +15,7 @@ def load_config(conf) -> None:
     global remain_config
     if len(conf) == 1:
         conf = next(iter(conf.values()))
-    remain_config = DefaultConfig.load_config(config, conf, check_config=False)
+    remain_config = config.load_config(conf, check_config=False)
 
 
 if __name__ == "__main__":
@@ -32,7 +32,8 @@ if __name__ == "__main__":
         )
     )
 
-    if "use_amp" in remain_config:
+    if remain_config.pop("use_amp", False):
         print("use AMP")
         trainer.set_amp()
+    assert not remain_config
     trainer.train()
