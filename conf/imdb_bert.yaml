@@ -8,4 +8,6 @@ learning_rate_scheduler: CosineAnnealingLR
 learning_rate: 0.01
 log_level: INFO
 cache_transforms: true
+dataset_kwargs:
+  max_len: 300
 ...
