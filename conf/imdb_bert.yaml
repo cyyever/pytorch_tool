@@ -1,0 +1,11 @@
+---
+dataset_name: IMDB
+model_name: sequence_classification_bert-base-cased
+optimizer_name: SGD
+epoch: 10
+use_amp: true
+learning_rate_scheduler: CosineAnnealingLR
+learning_rate: 0.01
+log_level: INFO
+cache_transforms: true
+...
