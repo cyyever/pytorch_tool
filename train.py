@@ -7,15 +7,12 @@ from cyy_torch_toolbox.default_config import DefaultConfig
 
 config = DefaultConfig()
 
-remain_config = {}
-
 
 @hydra.main(config_path="conf", version_base=None)
 def load_config(conf) -> None:
-    global remain_config
     if len(conf) == 1:
         conf = next(iter(conf.values()))
-    remain_config = config.load_config(conf, check_config=False)
+    config.load_config(conf, check_config=True)
 
 
 if __name__ == "__main__":
@@ -32,8 +29,6 @@ if __name__ == "__main__":
         )
     )
 
-    if remain_config.pop("use_amp", False):
-        print("use AMP")
-        trainer.set_amp()
-    assert not remain_config
+    print(trainer.model)
+    trainer.model_with_loss.need_input_features = True
     trainer.train()
