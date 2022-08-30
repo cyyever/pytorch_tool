@@ -1,0 +1,14 @@
+---
+dataset_name: multi_nli
+model_name: sequence_classification_distilbert-base-cased
+optimizer_name: SGD
+epoch: 10
+use_amp: true
+learning_rate_scheduler: CosineAnnealingLR
+learning_rate: 0.004
+log_level: INFO
+cache_transforms: true
+dataset_kwargs:
+  max_len: 300
+  val_split: validation_matched
+...
