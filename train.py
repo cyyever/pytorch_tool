@@ -30,5 +30,4 @@ if __name__ == "__main__":
     )
 
     print(trainer.model)
-    trainer.model_with_loss.need_input_features = True
     trainer.train()
