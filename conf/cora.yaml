@@ -1,0 +1,7 @@
+---
+dataset_name: Cora
+epoch: 400
+use_amp: true
+log_level: INFO
+learning_rate: 0.01
+cache_transforms: cpu
