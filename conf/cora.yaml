@@ -1,7 +1,9 @@
 ---
 dataset_name: Cora
+model_name: SimpleGCN
 epoch: 400
 use_amp: true
 log_level: INFO
 learning_rate: 0.01
+weight_decay: 0.01
 cache_transforms: cpu
