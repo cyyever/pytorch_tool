@@ -1,0 +1,11 @@
+---
+dataset_name: CitationFull
+model_name: SimpleGCN
+epoch: 100
+use_amp: true
+log_level: INFO
+learning_rate: 0.001
+weight_decay: 0.001
+dataset_kwargs:
+  name: DBLP
+cache_transforms: cpu
