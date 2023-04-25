@@ -1,13 +1,13 @@
 ---
 dataset_name: multi_nli
-model_name: sequence_classification_t5_large
+model_name: huggingface_t5-large
 optimizer_name: SGD
-epoch: 100
-use_amp: false
+epoch: 10
+use_amp: true
 learning_rate_scheduler: CosineAnnealingLR
 learning_rate: 0.004
 log_level: INFO
-cache_transforms: false
+cache_transforms: true
 dataset_kwargs:
   max_len: 300
   val_split: validation_matched
