@@ -1,0 +1,14 @@
+---
+dataset_name: multi_nli
+model_name: sequence_classification_t5_large
+optimizer_name: SGD
+epoch: 100
+use_amp: false
+learning_rate_scheduler: CosineAnnealingLR
+learning_rate: 0.004
+log_level: INFO
+cache_transforms: false
+dataset_kwargs:
+  max_len: 300
+  val_split: validation_matched
+...
