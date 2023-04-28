@@ -7,9 +7,9 @@ use_amp: true
 learning_rate: 0.004
 learning_rate_scheduler: CosineAnnealingLR
 log_level: INFO
-# cache_transforms: cuda
 dataset_kwargs:
   val_split: validation_matched
+  max_len: 300
 model_kwargs:
   max_len: 300
   word_vector_name: glove.6B.100d
