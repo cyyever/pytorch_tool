@@ -1,14 +1,21 @@
 ---
 dataset_name: multi_nli
-model_name: hugging_face_seq2seq_lm_t5-large
+model_name: hugging_face_seq2seq_lm_t5-small
 optimizer_name: SGD
 epoch: 10
 use_amp: true
 learning_rate_scheduler: CosineAnnealingLR
 learning_rate: 0.004
 log_level: INFO
-cache_transforms: true
+cache_transforms: false
 pretrained: true
 dataset_kwargs:
-  max_len: 300
+  max_len: 512
+  tokenizer:
+    type: hugging_face
+    name: t5-small
+    kwargs:
+      model_max_length: 512
   val_split: validation_matched
+model_kwargs:
+  frozen_module_names: [encoder, decoder, shared]
