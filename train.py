@@ -5,7 +5,7 @@ import hydra
 from cyy_naive_lib.log import set_file_handler
 from cyy_torch_toolbox.default_config import DefaultConfig
 
-config = DefaultConfig()
+config = DefaultConfig("", "")
 
 
 @hydra.main(config_path="conf", version_base=None)
