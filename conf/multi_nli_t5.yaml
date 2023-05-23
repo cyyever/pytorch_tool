@@ -10,12 +10,10 @@ log_level: INFO
 cache_transforms: false
 pretrained: true
 dataset_kwargs:
-  max_len: 512
+  max_len: 100
   tokenizer:
     type: hugging_face
     name: t5-small
-    kwargs:
-      model_max_length: 512
   val_split: validation_matched
 model_kwargs:
   frozen_module_names: [encoder, decoder, shared]
