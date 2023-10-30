@@ -1,6 +1,6 @@
 ---
 dataset_name: CitationFull
-model_name: SimpleGCN
+model_name: OneGCN
 epoch: 100
 use_amp: true
 log_level: INFO
