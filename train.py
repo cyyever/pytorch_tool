@@ -3,9 +3,9 @@ import os
 
 import hydra
 from cyy_naive_lib.log import add_file_handler
-from cyy_torch_toolbox.default_config import DefaultConfig
+from cyy_torch_toolbox.default_config import Config
 
-config = DefaultConfig("", "")
+config = Config("", "")
 
 
 @hydra.main(config_path="conf", version_base=None)
