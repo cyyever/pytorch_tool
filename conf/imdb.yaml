@@ -1,13 +1,13 @@
 ---
-dataset_name: IMDB
+dataset_name: imdb
 model_name: TransformerClassificationModel
 optimizer_name: SGD
 epoch: 10
 use_amp: true
-learning_rate_scheduler: CosineAnnealingLR
-learning_rate: 0.01
+learning_rate_scheduler_name: CosineAnnealingLR
+learning_rate: 0.1
 log_level: INFO
-cache_transforms: true
+cache_transforms: cpu
 dataset_kwargs:
   dataset_type: text
   max_len: 300

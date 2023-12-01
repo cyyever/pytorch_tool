@@ -1,16 +1,15 @@
 ---
-dataset_name: IMDB
+dataset_name: imdb
 model_name: hugging_face_sequence_classification_bert-base-cased
 optimizer_name: SGD
 epoch: 10
 use_amp: true
-learning_rate_scheduler: CosineAnnealingLR
+learning_rate_scheduler_name: CosineAnnealingLR
 learning_rate: 0.01
 log_level: INFO
-cache_transforms: true
+cache_transforms: cpu
 dataset_kwargs:
   tokenizer:
     type: hugging_face
     name: bert-base-cased
   max_len: 300
-...
