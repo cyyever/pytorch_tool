@@ -1,6 +1,7 @@
 import datetime
 import os
 
+import cyy_torch_code  # noqa: F401
 import cyy_torch_graph  # noqa: F401
 import cyy_torch_text  # noqa: F401
 import hydra
