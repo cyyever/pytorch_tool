@@ -1,0 +1,14 @@
+---
+dataset_name: Devign
+model_name: hugging_face_sequence_classification_microsoft_codebert-base
+optimizer_name: SGD
+epoch: 10
+use_amp: true
+log_level: INFO
+cache_transforms: cpu
+dataset_kwargs:
+  max_len: 510
+model_kwargs:
+  pretrained: true
+  frozen_modules:
+    names: [roberta.embeddings, roberta.encoder]
