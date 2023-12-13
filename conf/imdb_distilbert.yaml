@@ -1,13 +1,17 @@
 ---
-dataset_name: IMDB
-model_name: sequence_classification_distilbert-base-cased
+dataset_name: imdb
+model_name: hugging_face_sequence_classification_distilbert-base-cased
 optimizer_name: SGD
 epoch: 10
 use_amp: true
 learning_rate_scheduler_name: CosineAnnealingLR
 learning_rate: 0.004
 log_level: INFO
-cache_transforms: true
+cache_transforms: device
 dataset_kwargs:
+  pretrained: true
   max_len: 300
-...
+  frozen_modules:
+    names:
+      - distilbert.embeddings
+      - distilbert.transformer
