@@ -1,9 +1,10 @@
 ---
-dataset_name: CIFAR100
-model_name: densenet121
+dataset_name: CIFAR10
+model_name: densenet40
+optimizer_name: SGD
 epoch: 50
 learning_rate_scheduler_name: CosineAnnealingLR
 learning_rate: 0.1
 use_amp: true
-cache_transforms: cpu
+cache_transforms: true
 log_level: INFO

@@ -12,6 +12,4 @@ dataset_kwargs:
   pretrained: true
   max_len: 300
   frozen_modules:
-    names:
-      - distilbert.embeddings
-      - distilbert.transformer
+    names: [distilbert.embeddings, distilbert.transformer]
