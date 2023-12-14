@@ -2,9 +2,9 @@
 dataset_name: CIFAR100
 model_name: densenet121
 epoch: 50
-learning_rate_scheduler: CosineAnnealingLR
+learning_rate_scheduler_name: CosineAnnealingLR
 learning_rate: 0.1
 use_amp: true
-cache_transforms: true
+cache_transforms: cpu
 log_level: INFO
 ...
