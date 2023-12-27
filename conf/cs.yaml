@@ -1,0 +1,12 @@
+---
+dataset_name: Coauthor_CS
+model_name: TwoGCN
+epoch: 50
+use_amp: true
+log_level: INFO
+learning_rate: 0.01
+fake_weight_decay: 0
+cache_transforms: cpu
+dataloader_kwargs:
+  batch_number: 10
+  num_neighbor: 10
