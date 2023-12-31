@@ -1,0 +1,12 @@
+---
+dataset_name: Yelp
+model_name: TwoGATCN
+epoch: 100
+batch_size: 100
+use_amp: false
+log_level: INFO
+learning_rate: 0.1
+weight_decay: 0.001
+cache_transforms: cpu
+extra_hyper_parameters:
+  num_neighbor: 10
