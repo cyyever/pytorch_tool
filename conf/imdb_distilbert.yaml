@@ -9,7 +9,8 @@ learning_rate: 0.004
 log_level: INFO
 cache_transforms: device
 dataset_kwargs:
-  pretrained: true
   max_len: 300
+model_kwargs:
+  pretrained: true
   frozen_modules:
     names: [distilbert.embeddings, distilbert.transformer]
