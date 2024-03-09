@@ -36,13 +36,15 @@ if __name__ == "__main__":
     load_config()
     trainer = config.create_trainer()
 
+    task_time = datetime.datetime.now()
+    filename = f"{task_time:%Y-%m-%d_%H_%M_%S}.log"
     add_file_handler(
         os.path.join(
             "log",
             "train",
             config.dc_config.dataset_name,
             config.model_config.model_name,
-            "{date:%Y-%m-%d_%H:%M:%S}.log".format(date=datetime.datetime.now()),
+            filename,
         )
     )
 
