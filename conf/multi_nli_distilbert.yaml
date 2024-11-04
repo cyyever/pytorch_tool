@@ -12,6 +12,6 @@ dataset_kwargs:
   tokenizer:
     type: hugging_face
     name: distilbert-base-cased
-  max_len: 300
+  input_max_len: 300
   val_split: validation_matched
 ...

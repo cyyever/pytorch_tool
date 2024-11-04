@@ -9,7 +9,7 @@ learning_rate: 0.004
 log_level: INFO
 cache_transforms: device
 dataset_kwargs:
-  max_len: 300
+  input_max_len: 300
 model_kwargs:
   pretrained: true
   frozen_modules:

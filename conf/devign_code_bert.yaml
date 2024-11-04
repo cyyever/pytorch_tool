@@ -4,10 +4,10 @@ model_name: hugging_face_sequence_classification_microsoft_codebert-base
 epoch: 10
 log_level: INFO
 cache_transforms: device
-learning_rate: 4.636375729501466e-05
+learning_rate: 4.636375729501465e-05
 use_amp: true
 dataset_kwargs:
-  max_len: 510
+  input_max_len: 510
 model_kwargs:
   pretrained: true
   frozen_modules:

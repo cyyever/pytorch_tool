@@ -9,9 +9,8 @@ learning_rate_scheduler: CosineAnnealingLR
 log_level: INFO
 dataset_kwargs:
   val_split: validation_matched
-  max_len: 300
+  input_max_len: 300
 model_kwargs:
-  max_len: 300
   word_vector_name: glove.6B.100d
   num_encoder_layer: 6
   nhead: 10

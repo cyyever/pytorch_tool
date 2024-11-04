@@ -10,7 +10,7 @@ log_level: INFO
 cache_transforms: false
 pretrained: true
 dataset_kwargs:
-  max_len: 100
+  input_max_len: 100
   tokenizer:
     type: hugging_face
     name: t5-small

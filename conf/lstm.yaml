@@ -1,0 +1,7 @@
+---
+dataset_name: IMDB
+model_name: SimpleLSTM
+epoch: 10
+use_amp: false
+log_level: INFO
+cache_transforms: true
