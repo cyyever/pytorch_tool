@@ -1,6 +1,6 @@
 ---
-dataset_name: Cora
-model_name: SimpleGCN
+dataset_name: Planetoid_Cora
+model_name: OneGCN
 epoch: 400
 use_amp: true
 log_level: INFO
