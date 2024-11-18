@@ -8,5 +8,5 @@ log_level: INFO
 learning_rate: 0.1
 weight_decay: 0.001
 cache_transforms: cpu
-extra_hyper_parameters:
+dataloader_kwargs:
   num_neighbor: 10
