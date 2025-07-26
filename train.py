@@ -1,5 +1,6 @@
 import datetime
 import os
+import muon_optimizer
 
 try:
     import cyy_torch_vision  # noqa: F401
@@ -9,18 +10,11 @@ try:
     import cyy_torch_text  # noqa: F401
 except BaseException:
     pass
-try:
-    import cyy_torch_code  # noqa: F401
-except BaseException:
-    pass
-try:
-    import cyy_torch_graph  # noqa: F401
-except BaseException:
-    pass
-
 import hydra
 from cyy_naive_lib.log import add_file_handler
 from cyy_torch_toolbox import Config
+from cyy_torch_toolbox.hyper_parameter import global_optimizer_factory
+from muon import MuonWithAuxAdam
 
 config = Config("", "")
 
@@ -33,6 +27,7 @@ def load_config(conf) -> None:
 
 
 if __name__ == "__main__":
+    global_optimizer_factory.register("moun", MuonWithAuxAdam)
     load_config()
     trainer = config.create_trainer()
 
